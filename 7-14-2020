@@ -1,0 +1,12 @@
+library(tidyverse)
+astronauts <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2020/2020-07-14/astronauts.csv')
+
+american_astronauts <- astronauts %>%
+  filter(nationality == "U.S.")
+
+hist(american_astronauts$year_of_birth,
+     breaks=60,
+       main = "Birth Years of American Astronauts",
+     xlab = "Year of Birth",
+     ylab = "# of Astronauts Born",
+     col = "blue")
